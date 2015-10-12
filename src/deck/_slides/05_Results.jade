@@ -1,0 +1,62 @@
+section.left.fragments
+  h2 Results
+  ul
+    li.fragment MNIST
+    li.fragment Street View House Numbers
+    li.fragment Fine-Grained Classification
+
+section.left.fragments
+  h3 MNIST - Setting
+  ul
+    li.fragment Baseline FCN with two hidden layers and a classification layer.
+    li.fragment Baseline CNN with 
+      ul 
+        li 9 x 9 convolutional layer, 2 x 2 max-pooling layer 
+        li 7 x 7 convolutional layer, 2 x 2 max-pooling layer 
+        li classification layer
+        li 32 - 64 filters per layer
+    li.fragment All networks use softmax and ReLU
+
+section.left.fragments
+  h3 MNIST - Setting
+  ul
+    li.fragment All STNs are placed at the front of the network
+    li.fragment STN localisation nets:
+      ul
+        li ST-FCN: 3 layers of 32 units
+        li ST-CNN: two 20-filter 5 x 5 convolutional layers
+        li 2 x 2 max-pooling 
+        li FCN of 20 units
+    li.fragment All networks contain the same no of learnable params ~ 400k
+
+section.left.fragments
+  h3 MNIST - Distorted
+  img(src="/img/mnist_distorted.png")
+  p.fragment Demonstrates resilience to distorsions
+section.left.fragments
+  h3 MNIST - Addition
+  img(src="/img/mnist_addition.png")
+  p.fragment Uses parallel STNs
+  p.fragment Demonstrates the capacity to model multiple objects
+section.left.fragments
+  h3 MNIST Co-localisation
+  ul
+    li.fragment Given a set of images that are assumed to contain instances of a common but unknown object class, localise (with a bounding box) the common object.
+    li.fragment Neither the object class labels, nor the object location ground truth is used for optimisation, only the set of images.
+section.left
+  h3 MNIST Co-localisation
+  img(src="/img/mnist_colocalisation.png")
+  ul
+    li Encoding function $e()$ is a CNN trained with the distorted MNIST set 
+    li Hinge loss to enforce the distance between two outputs of the ST to be less than the distance to a random crop 
+section(data-background-video="/media/arxivSTmovie.m4v" data-background="#FFF")
+
+section.left.fragment
+  h3 Street View House Numbers
+  ul
+    li.fragment 200k training examples
+    li.fragment Between 1 and 5 digits with large variability in size, position.
+    li.fragment Baseline CNN with 11 hidden layers
+section.left.fragment(data-background="#FFF")
+  h3 Street View House Numbers
+  img(src="/img/svhn.png")

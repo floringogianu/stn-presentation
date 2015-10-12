@@ -1,0 +1,87 @@
+section.left.fragments
+  h3 Recognizing objects is difficult!
+  ul
+    li.fragment Algorithms lack 3D cues
+    li.fragment Classes carry meaning
+    li.fragment Lighting effects
+    li.fragment Viewpoint changes 
+    li.fragment Deformations
+  p.right.fragment
+    small (Hinton, 2012)
+
+
+section.left.fragments
+  h3 How CNNs achieve translation invariance?
+  ul
+    li.fragment CNNs present equivariance at the feature detector level... 
+    li.fragment ...and limited translation invariance across multiple convolution and pooling layers
+    li.fragment But they're "doomed" because they don't preserve spatial relations
+  p.right.fragment
+    small (Hinton, 2012)
+
+
+section.left.fragments
+  h3 Brute Force - Data Augmentation
+  ul
+    li.fragment
+      span.cite Ciresan, 2010 
+      span - MNIST training set is distorted at each epoch with affine transformations + elastic deformations emulating uncontrolled oscillations of hand muscles
+    li.fragment 0.35% error rate on MNIST
+
+section.left(data-background="/img/augmentation.jpg" data-background-repeat="repeat" data-background-size="600px" data-background-transition="zoom")
+  
+section.left.fragments
+  h3 Brute Force - Data Augmentation
+  ul
+    li 
+      span.cite Baidu Research, 2015 
+      span - Augmentation and training on a 36 nodes cluster with 144 GPUs  
+      table(style="width: 60%;font-size: 80%").fragment
+        thead
+          tr 
+            th Augmentation
+            th Possible changes
+        tbody
+          tr
+            td Color Casting
+            td 68,920
+          tr
+            td Vignetting
+            td 1,960
+          tr
+            td Lens Distorsion
+            td 2,60
+          tr
+            td Rotation
+            td 20
+          tr
+            td Flipping
+            td 2
+          tr
+            td Cropping
+            td 82,944
+    li.fragment 5.98% error rate on ImageNet
+
+
+section.left.fragements
+  h3 Related work. General discussion
+  ul
+    li.fragment
+      span.cite Hinton, 2011 
+      span - Transforming auto-encoders
+    li.fragment Taken further by 
+      span.cite Tieleman, 2014
+    li.fragment These tehniques learn features from transformation supervision
+
+
+section.left.fragements
+  h3 Related work. Transforming Feature Maps
+  ul
+    li.fragment
+      span.cite Lenc & Vedald, 2015 
+      span - Understanding image representations by measuring their equivariance and equivalence
+    li.fragment
+      span.cite Gens & Domingos, 2014 
+      span - Deep symmetry networks. 
+      span The transformations in the affine group are applied to feature maps.
+    li.fragment There's an entire class of CNN variations modified to achieve spatial invariance by transforming the feature maps.
