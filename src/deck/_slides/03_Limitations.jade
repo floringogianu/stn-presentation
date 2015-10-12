@@ -13,8 +13,8 @@ section.left.fragments
 section.left.fragments
   h3 How CNNs achieve translation invariance?
   ul
-    li.fragment CNNs present equivariance at the feature detector level... 
-    li.fragment ...and limited translation invariance across multiple convolution and pooling layers
+    li.fragment CNNs present translation #[span.highlight equivariance] at the feature detector level... 
+    li.fragment ...and limited translation #[span.highlight invariance] across multiple convolution and pooling layers
     li.fragment But they're "doomed" because they don't preserve spatial relations
   p.right.fragment
     small (Hinton, 2012)
@@ -64,11 +64,12 @@ section.left.fragments
 
 
 section.left.fragements
-  h3 Related work. General discussion
+  h3 Related work. General discussion (I)
   ul
     li.fragment
       span.cite Hinton, 2011 
       span - Transforming auto-encoders
+      img(src="/img/transforming_autoencoders.png" style="max-width: 50%")
     li.fragment Taken further by 
       span.cite Tieleman, 2014
     li.fragment These tehniques learn features from transformation supervision
