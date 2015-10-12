@@ -1,0 +1,83 @@
+@import "../../node_modules/reveal.js/css/reveal.scss";
+@import "./template/mixins";
+@import "./template/settings";
+
+// Include theme-specific fonts
+@import url(../../lib/font/source-sans-pro/source-sans-pro.css);
+
+
+$dark-purple: #130B24;
+$gold-yellow: #F4D018;
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: $dark-purple;
+
+$mainColor: #fff;
+$headingColor: $gold-yellow;
+
+$mainFontSize: 38px;
+$mainFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingFontWeight: 600;
+$linkColor: #42affa;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+section.has-light-background {
+	&, h1, h2, h3, h4, h5, h6 {
+		color: $dark-purple;
+	}
+}
+@import "./template/theme";
+
+// Customizations
+.reveal {
+	&, h3, h4, h5, h6 {
+		text-transform: none;
+    letter-spacing: 1px;
+    margin-bottom: 3rem;
+	}
+  ul {
+    font-size: 80%;
+    line-height: 1.6;
+  }
+  ol {
+    margin: 0 0 0 1.6em;
+  }
+  section img {
+    box-shadow: none;
+  }
+}
+.reveal .slides {
+  .left {
+    text-align: left;
+  }
+  .right {
+    text-align: right;
+  }
+}
+
+.reveal .progress span {
+  background-color: $gold-yellow;
+}
+
+.capitalized {
+  text-transform: capitalized;
+}
+.cite {
+  color: $gold-yellow;
+}
+h1, h2, h3, h4, h5, h6 {
+  .normalized {
+    text-transform: lowercase;
+    font-weight: normal;
+  }
+}
